@@ -1,0 +1,49 @@
+{
+  "name": "luxutil",
+  "version": "1.0.5",
+  "description": "",
+  "main": "dist/luxutil.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config ./build/webpack.pro.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/15257988874/luxUtil.git"
+  },
+  "author": "lux",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/15257988874/luxUtil/issues"
+  },
+  "homepage": "https://github.com/15257988874/luxUtil#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "raven-js": "^3.27.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "autoprefixer-loader": "^2.1.0",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^26.6.3",
+    "normalize.css": "^8.0.1",
+    "rollup": "^1.32.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-require-context": "^1.0.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1",
+    "webpack-merge": "^4.2.1"
+  }
+}
