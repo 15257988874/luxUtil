@@ -1,6 +1,6 @@
 {
   "name": "luxutil",
-  "version": "1.0.5",
+  "version": "1.0.15",
   "description": "",
   "main": "dist/luxutil.min.js",
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/15257988874/luxUtil#readme",
   "dependencies": {
     "axios": "^0.21.1",
+    "qs": "^6.10.1",
     "raven-js": "^3.27.2"
   },
   "devDependencies": {

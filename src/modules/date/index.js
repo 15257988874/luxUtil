@@ -1,7 +1,7 @@
 /*
  * @Author: lux
  * @Date: 2021-05-21 11:12:13
- * @LastEditTime: 2021-05-21 16:16:50
+ * @LastEditTime: 2021-06-09 14:16:33
  * @LastEditors: lux
  * @FilePath: \luxUtil\src\modules\date\index.js
  */
@@ -32,7 +32,7 @@ module.exports = {
    * @param  fmt {string} 格式
    * @return {String}
    */
-  format(time, fmt = 'YYYY-MM-dd hh:mm:ss') {
+  format(time, fmt = 'yyyy-MM-dd hh:mm:ss') {
     let ret
     let date = new Date(time)
     let opt = {

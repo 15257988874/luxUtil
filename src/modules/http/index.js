@@ -1,10 +1,11 @@
 import axios from 'axios'
-import { httpCode } from '../../const/httpCode'
-import { localStorage } from '../localStorage'
+import qs from 'qs'
+import httpCode from '../../const/httpCode'
+import localStorage from '../localStorage'
 
 let instance = axios.create({})
 
-instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urllencoded'
+instance.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=UTF-8'
 instance.interceptors.request.use(
   config => {
     if (localStorage.get('token')) config.headers['authorization'] = 'Bearer ' + localStorage.get('token')
@@ -21,6 +22,7 @@ instance.interceptors.response.use(
         // todo
       }
     }
+    console.log(err)
     return Promise.reject(err.response && error.response.data)
   }
 )
@@ -37,13 +39,16 @@ function checkStatus(response) {
 function checkCode(res) {
   return res
 }
-const request = (url, param, config, method) => instance[method](url, param, Object.assign({}, config)).then(checkStatus).then(checkCode)
+const request = (url, param, config, method) => {
+  return instance[method](url, param, Object.assign({}, config)).then(checkStatus).then(checkCode)
+}
 export default {
   init(option = { withCredentials: true }) {
     instance.defaults.baseURL = option.url
     instance.defaults.timeout = option.timeout || 20000
+    if (option.contentType) instance.defaults.headers.post['Content-Type'] = option.contentType
     instance.defaults.withCredentials = option.withCredentials
   },
   get: (url, param, config = {}) => request(url, param, config, 'get'),
-  post: (url, param, config = {}) => request(url, param, config, 'post')
+  post: (url, param, config = {}) => request(url, qs.stringify(param), config, 'post')
 }
